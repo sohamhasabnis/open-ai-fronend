@@ -11,7 +11,7 @@ export class RestCallService {
     let param = new HttpParams().set('text', text).set('command', command);
     let data = '';
     await this.http
-      .get<any>('http://localhost:8080/get-blog/ideas', { params: param })
+      .get<any>('https://open-ai-project-test.herokuapp.com/ideas', { params: param })
       .toPromise()
       .then((value) => {
         data = value.text;
