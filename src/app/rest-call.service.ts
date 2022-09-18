@@ -26,7 +26,7 @@ export class RestCallService {
       .set('characterLimit', character);
     let data = '';
     await this.http
-      .get<any>('http://localhost:8080/get-blog/article', { params: param })
+      .get<any>('https://open-ai-project-test.herokuapp.com/get-blog/article', { params: param })
       .toPromise()
       .then((value) => {
         data = value.text;
