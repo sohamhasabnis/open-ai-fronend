@@ -1,0 +1,211 @@
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="rendered-form">
+      <div class="col-md-10">
+        <div>
+          <h3>Generate blog ideas</h3>
+        </div>
+        <div class="formbuilder-text form-group field-text-1661604903129">
+          <label for="text-1661604903129" class="formbuilder-text-label"
+            >Enter Subject for which you need topic</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="text-1661604903129"
+            access="false"
+            id="text-1661604903129"
+            [(ngModel)]="q1InputText1"
+          />
+        </div>
+        <div class="formbuilder-text form-group field-text-1661604903127">
+          <label for="text-1661604903127" class="formbuilder-text-label"
+            >Enter Command for which you need topic</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="text-1661604903127"
+            access="false"
+            id="text-1661604903127"
+            [(ngModel)]="q1InputText2"
+          />
+        </div>
+        <div class="formbuilder-button form-group field-button-1661605018697">
+          <button
+            type="button"
+            class="btn-primary btn"
+            name="button-1661605018697"
+            access="false"
+            id="button-1661605018697"
+            (click)="getBlogIdeaDetails()"
+          >
+            Button
+          </button>
+        </div>
+        <div
+          class="formbuilder-textarea form-group field-textarea-1661604994210"
+        >
+          <label for="textarea-1661604994210" class="formbuilder-textarea-label"
+            >topic Ideas From AI</label
+          >
+          <textarea
+            type="textarea"
+            class="form-control"
+            name="textarea-1661604994210"
+            access="false"
+            id="textarea-1661604994210"
+            [(ngModel)]="q1InputText3"
+            [hidden]="!q1InputText3"
+            disabled="true"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="col-md-10">
+        <div>
+          <h3>
+            Enter the Blog Topic Below that you have selected to write about
+          </h3>
+        </div>
+        <div class="formbuilder-text form-group field-text-1661605090517">
+          <label for="text-1661605090517" class="formbuilder-text-label"
+            >Enter Topic on which you need details</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="text-1661605090517"
+            access="false"
+            id="text-1661605090517"
+            [(ngModel)]="q2InputText1"
+          />
+        </div>
+        <div class="formbuilder-text form-group field-text-16616049031271">
+          <label for="text-16616049031271" class="formbuilder-text-label"
+            >Enter Command for which you need topic</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="text-16616049031271"
+            access="false"
+            id="text-16616049031271"
+            [(ngModel)]="q2InputText2"
+          />
+        </div>
+        
+        <div class="formbuilder-button form-group field-button-1661605114841">
+          <button
+            type="button"
+            class="btn-primary btn"
+            name="button-1661605114841"
+            access="false"
+            id="button-1661605114841"
+            (click)="getBlodIdeaSection()"
+          >
+            Button
+          </button>
+        </div>
+        <div
+          class="formbuilder-textarea form-group field-textarea-1661605131058"
+        >
+          <label for="textarea-1661605131058" class="formbuilder-textarea-label"
+            >Detailed Topic</label
+          >
+          <textarea
+            type="textarea"
+            class="form-control"
+            name="textarea-1661605131058"
+            access="false"
+            id="textarea-1661605131058"
+            [(ngModel)]="q2InputText3"
+            [hidden]="!q2InputText3"
+            disabled="true"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="col-md-10">
+        <div>
+          <h3>Enter the Blog section title you want to expand</h3>
+        </div>
+        <div class="formbuilder-text form-group field-text-1661605147618">
+          <label for="text-1661605147618" class="formbuilder-text-label"
+            >Enter the topic on which you need a blog</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="text-1661605147618"
+            access="false"
+            id="text-1661605147618"
+            [(ngModel)]="q3InputText1"
+          />
+        </div>
+        <div class="formbuilder-text form-group field-text-16616049031271">
+          <label for="text-16616049031271" class="formbuilder-text-label"
+            >Enter Command for which you need topic</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="text-16616049031271"
+            access="false"
+            id="text-16616049031271"
+            [(ngModel)]="q3InputText2"
+          />
+        </div>
+        <div class="formbuilder-text form-group field-text-166160490312712">
+            <label for="text-166160490312712" class="formbuilder-text-label"
+              >Enter number of Characters you want</label>
+            <input
+              type="number"
+              class="form-control"
+              name="text-166160490312712"
+              access="false"
+              id="text-166160490312712"
+              [(ngModel)]="characterlength"
+            />
+          </div>
+        <div class="formbuilder-button form-group field-button-1661605192154">
+          <button
+            type="button"
+            class="btn-primary btn"
+            name="button-1661605192154"
+            access="false"
+            id="button-1661605192154"
+            (click)="getBlogArticle()"
+          >
+            Button
+          </button>
+        </div>
+        <div
+          class="formbuilder-textarea form-group field-textarea-1661605202002"
+        >
+          <label for="textarea-1661605202002" class="formbuilder-textarea-label"
+            >Generated blog</label
+          >
+          <textarea
+            type="textarea"
+            class="form-control"
+            name="textarea-1661605202002"
+            access="false"
+            id="textarea-1661605202002"
+            [(ngModel)]="q3InputText3"
+            [hidden]="!q3InputText3"
+            disabled="true"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
