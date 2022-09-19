@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,9 +9,16 @@ export class RestCallService {
 
   async getBlogIdeaDetailsService(text: string, command: string) {
     let param = new HttpParams().set('text', text).set('command', command);
+    let headersReq = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Origin': '*'
+    });
     let data = '';
+    console.log(headersReq);
     await this.http
-      .get<any>('https://open-ai-project-test.herokuapp.com/ideas', { params: param })
+      .get<any>('https://open-api-test-f1.herokuapp.com/ideas', {headers:headersReq, params: param })
       .toPromise()
       .then((value) => {
         data = value.text;
@@ -26,7 +33,7 @@ export class RestCallService {
       .set('characterLimit', character);
     let data = '';
     await this.http
-      .get<any>('https://open-ai-project-test.herokuapp.com/get-blog/article', { params: param })
+      .get<any>('https://open-api-test-f1.herokuapp.com/get-blog/article', { params: param })
       .toPromise()
       .then((value) => {
         data = value.text;
