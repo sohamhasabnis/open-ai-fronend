@@ -18,7 +18,7 @@ export class RestCallService {
     let data = '';
     console.log(headersReq);
     await this.http
-      .get<any>('https://open-api-test-f1.herokuapp.com/ideas', {headers:headersReq, params: param })
+      .get<any>('https://open-api-test-f1.herokuapp.com/get-blog/ideas', {headers:headersReq, params: param })
       .toPromise()
       .then((value) => {
         data = value.text;
