@@ -47,8 +47,11 @@
             access="false"
             id="button-1661605018697"
             (click)="getBlogIdeaDetails()"
+            [disabled]="loadingBtn1"
           >
-            Button
+            Generate
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loadingBtn1"></span>
+            <span class="sr-only" *ngIf="loadingBtn1">Loading...</span>
           </button>
         </div>
         <div
@@ -111,8 +114,11 @@
             access="false"
             id="button-1661605114841"
             (click)="getBlodIdeaSection()"
+            [disabled]="loadingBtn3"
           >
-            Button
+          Generate
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loadingBtn2"></span>
+          <span class="sr-only" *ngIf="loadingBtn2">Loading...</span>
           </button>
         </div>
         <div
@@ -184,8 +190,11 @@
             access="false"
             id="button-1661605192154"
             (click)="getBlogArticle()"
+            [disabled]="loadingBtn3"
           >
-            Button
+           Generate
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loadingBtn3"></span>
+          <span class="sr-only" *ngIf="loadingBtn3">Loading...</span>
           </button>
         </div>
         <div
